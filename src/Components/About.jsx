@@ -19,7 +19,7 @@ const About = () => {
         {/* Right Content */}
         <div>
           <h1 className="text-5xl font-bold text-teal-400">
-            Shrestha Kumari
+            Shrestha Kumari 
           </h1>
 
           <h2 className="text-xl mt-3 font-semibold text-gray-300">
