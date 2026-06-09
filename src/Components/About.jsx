@@ -1,44 +1,263 @@
-import React from "react";
-import AboutImg from "../assets/Shrestha Kumari Photo.png"; // apni image ka naam yaha daalo
+// import React from "react";
+// import AboutImg from "../assets/Myphoto.png"; // apni image ka naam yaha daalo
+
+// const About = () => {
+//   return (
+//     <section id="About" className="w-full min-h-screen bg-linear-to-r from-black via-gray-900 to-black text-white flex items-center px-10">
+      
+//       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        
+//         {/* Left Image */}
+//         <div className="shrink-0">
+//           <img
+//             src={AboutImg}
+//             alt="Profile"
+//             className="w-72 h-96 object-cover rounded-2xl shadow-lg border border-gray-700"
+//           />
+//         </div>
+
+//         {/* Right Content */}
+//         <div>
+//           <h1 className="text-5xl font-bold text-blue-400">
+//             Shrestha Kumari 
+//           </h1>
+
+//           <h2 className="text-xl mt-3 font-semibold text-gray-300">
+//             Full Stack Developer
+//           </h2>
+
+//           <p className="mt-6 text-gray-400 leading-8 max-w-2xl">
+//             I am a Full Stack Developer with a passion for building web
+//             applications that provide an exceptional user experience. I have a
+//             strong foundation in both front-end and back-end technologies,
+//             allowing me to create seamless and efficient applications. My goal
+//             is to leverage my skills to contribute to innovative projects and
+//             continuously learn in the ever-evolving tech landscape.
+//           </p>
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default About;
+import React, { useState, useEffect } from "react"
+import AboutImg from "../assets/Myphoto.png"
+import { FaCode, FaServer, FaDatabase, FaPuzzlePiece } from "react-icons/fa"
+
+const highlights = [
+  {
+    icon: FaCode,
+    title: "Frontend Development",
+    description: "Building responsive, interactive UIs with React, Tailwind CSS, and modern JavaScript",
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    icon: FaServer,
+    title: "Backend Development",
+    description: "Designing scalable APIs and microservices with Node.js, Express, and RESTful architecture",
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    icon: FaDatabase,
+    title: "Database Management",
+    description: "Optimizing data solutions with MySQL, MongoDB, and efficient schema design",
+    color: "from-green-500 to-teal-500"
+  },
+  {
+    icon: FaPuzzlePiece,
+    title: "Problem Solving & DSA",
+    description: "Strong algorithmic thinking with expertise in data structures and problem-solving",
+    color: "from-orange-500 to-red-500"
+  },
+]
+
+const stats = [
+  { number: "3+", label: "Projects Built", icon: "🚀" },
+  { number: "12+", label: "Technologies", icon: "⚙️" },
+  { number: "50+", label: "Coding Problems", icon: "💡" },
+  { number: "2x", label: "Ideathon Winner", icon: "🏆" },
+]
 
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false)
+  const [animateStats, setAnimateStats] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+    const timer = setTimeout(() => setAnimateStats(true), 300)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
-    <section id="About" className="w-full min-h-screen bg-linear-to-r from-black via-gray-900 to-black text-white flex items-center px-10">
-      
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    <section id="About" className="w-full py-20 bg-slate-950 text-white overflow-hidden">
+      {/* Background animation elements */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-20 right-1/4 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-1/3 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 md:px-1">
         
-        {/* Left Image */}
-        <div className="shrink-0">
-          <img
-            src={AboutImg}
-            alt="Profile"
-            className="w-72 h-80 object-cover rounded-2xl shadow-lg border border-gray-700"
-          />
+        {/* Section Header */}
+        <div className={`text-center mb-20 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <p className="text-sm text-cyan-400 font-semibold tracking-widest uppercase mb-4">
+            Get to know me
+          </p>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            About{" "}
+            <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Me
+            </span>
+          </h2>
         </div>
 
-        {/* Right Content */}
-        <div>
-          <h1 className="text-5xl font-bold text-teal-400">
-            Shrestha Kumari 
-          </h1>
+        {/* Main Content - Two Column */}
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          
+          {/* Left Column - Profile Image */}
+          <div className={`flex justify-center md:justify-start transform transition-all duration-700 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
+            <div className="relative">
+              {/* Glow background */}
+              <div className="absolute inset-0 bg-linear-to-br from-blue-500 via-purple-500 to-cyan-500 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
+              
+              {/* Image frame */}
+              <div className="relative p-1 bg-linear-to-br from-blue-500 via-purple-500 to-cyan-500 rounded-3xl overflow-hidden">
+                <div className="bg-slate-950 rounded-2xl p-4">
+                  <img
+                    src={AboutImg}
+                    alt="Shrestha Kumari"
+                    className="w-full max-w-sm h-auto object-cover rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
 
-          <h2 className="text-xl mt-3 font-semibold text-gray-300">
-            Frontend Developer
-          </h2>
+              {/* Achievement Badge */}
+              <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-linear-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg font-semibold flex items-center gap-2 border border-purple-400/30">
+                <span className="text-lg">🎓</span>
+                MCA · 83% Score
+              </div>
+            </div>
+          </div>
 
-          <p className="mt-6 text-gray-400 leading-8 max-w-2xl">
-            I am a Frontend Developer with a passion for building web
-            applications that provide an exceptional user experience. I have a
-            strong foundation in both front-end  technologies,
-            allowing me to create seamless and efficient applications. My goal
-            is to leverage my skills to contribute to innovative projects and
-            continuously learn in the ever-evolving tech landscape.
-          </p>
+          {/* Right Column - Introduction */}
+          <div className={`flex flex-col justify-center transform transition-all duration-700 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
+            <div className="mb-8">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                Shrestha Kumari
+              </h3>
+              <p className="text-xl text-cyan-400 font-semibold">
+                Full Stack Software Engineer
+              </p>
+            </div>
+
+            <p className="text-gray-400 text-lg leading-8 mb-6">
+              I'm a passionate <span className="text-white font-semibold">Full Stack Developer</span> with a strong foundation in modern web technologies. I specialize in building <span className="text-cyan-300">scalable, high-performance applications</span> that solve real-world problems.
+            </p>
+
+            <p className="text-gray-400 text-lg leading-8 mb-8">
+              My approach combines <span className="text-white font-semibold">clean code principles</span>, <span className="text-white font-semibold">responsive design</span>, and <span className="text-white font-semibold">user-centric thinking</span>. From e-commerce platforms to recommendation systems, I transform ideas into seamless digital experiences.
+            </p>
+
+            {/* Key Info Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { label: "Education", value: "MCA (2026)" },
+                { label: "University", value: "GL Bajaj ITM" },
+                { label: "Experience", value: "Full Stack Dev" },
+                { label: "Availability", value: "Immediate" },
+              ].map((item) => (
+                <div 
+                  key={item.label}
+                  className="group bg-gray-900/50 backdrop-blur-sm border border-gray-800 hover:border-blue-500/50 rounded-xl p-4 transition-all duration-300 hover:bg-gray-900"
+                >
+                  <div className="text-xs text-gray-500 uppercase tracking-widest mb-1">{item.label}</div>
+                  <div className="text-sm font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors">{item.value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Highlights Section */}
+        <div className="mb-20">
+          <h3 className={`text-2xl md:text-3xl font-bold text-white mb-12 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            What I Do
+          </h3>
+          
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            {highlights.map((item, index) => {
+              const Icon = item.icon
+              return (
+                <div
+                  key={item.title}
+                  className="group relative overflow-hidden rounded-2xl transition-all duration-500"
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  {/* Gradient background */}
+                  <div className={`absolute inset-0 bg-linear-to-br ${item.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                  
+                  {/* Border gradient */}
+                  <div className={`absolute inset-0 border border-gray-800 group-hover:border-gray-700 rounded-2xl transition-colors duration-300`}></div>
+
+                  {/* Glow on hover */}
+                  <div className={`absolute -inset-0.5 bg-linear-to-r ${item.color} rounded-2xl opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-300 -z-10`}></div>
+
+                  <div className="relative p-6 h-full flex flex-col bg-linear-to-br from-gray-900/80 to-gray-950/80 backdrop-blur-sm">
+                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-linear-to-br ${item.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="text-white text-lg" />
+                    </div>
+                    
+                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                      {item.title}
+                    </h4>
+                    
+                    <p className="text-gray-400 text-sm leading-6 group-hover:text-gray-300 transition-colors">
+                      {item.description}
+                    </p>
+
+                    <div className="mt-auto pt-4 flex items-center text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-sm font-semibold">Learn more</span>
+                      <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Statistics Section */}
+        <div className="bg-linear-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 md:p-12">
+          <h3 className={`text-2xl md:text-3xl font-bold text-white mb-12 text-center transform transition-all duration-700 ${animateStats ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            By The Numbers
+          </h3>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {stats.map((stat, index) => (
+              <div 
+                key={stat.label}
+                className={`text-center group cursor-pointer transform transition-all duration-500 hover:scale-110 ${animateStats ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2 group-hover:from-cyan-400 group-hover:to-purple-500 transition-all">
+                  {stat.number}
+                </div>
+                <div className="text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors">
+                  {stat.label}
+                </div>
+                <div className="text-2xl mt-2 opacity-50 group-hover:opacity-100 transition-opacity">
+                  {stat.icon}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About
