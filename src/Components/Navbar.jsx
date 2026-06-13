@@ -11,12 +11,12 @@ const Navbar = () => {
         Portfolio
       </span>
 
-      {/* Desktop Menu */}
+      {/* Desktop Menu - Changed #Skills to #skills and #contact to match section IDs */}
       <ul className="hidden md:flex gap-8 font-semibold">
         <li><a href="#About" className="hover:text-purple-400 transition">About</a></li>
-        <li><a href="#Skills" className="hover:text-purple-400 transition">Skills</a></li>
+        <li><a href="#skills" className="hover:text-purple-400 transition">Skills</a></li>
         <li><a href="#Projects" className="hover:text-purple-400 transition">Projects</a></li>
-        <li><a href="#Footer" className="hover:text-purple-400 transition">Contact</a></li>
+        <li><a href="#contact" className="hover:text-purple-400 transition">Contact</a></li>
       </ul>
 
       {/* Mobile Icon */}
@@ -36,14 +36,13 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Changed #Footer to #contact to correctly point to your contact container */}
       {menu && (
         <ul className="absolute top-14 left-0 w-full bg-[#111325] text-center py-6 flex flex-col gap-6 font-semibold md:hidden">
           <li><a href="#About" onClick={() => setMenu(false)}>About</a></li> 
-           {/* about click krne pe humberger closed */}
-          <li><a href="#Skills" onClick={() => setMenu(false)}>Skills</a></li>
+          <li><a href="#skills" onClick={() => setMenu(false)}>Skills</a></li>
           <li><a href="#Projects" onClick={() => setMenu(false)}>Projects</a></li>
-          <li><a href="#Footer" onClick={() => setMenu(false)}>Contact</a></li>
+          <li><a href="#contact" onClick={() => setMenu(false)}>Contact</a></li>
         </ul>
       )}
     </nav>

@@ -69,7 +69,7 @@ const Home = () => {
   const downloadResume = () => {
     // Create a simple resume download - you can replace with your actual resume file
     const link = document.createElement('a')
-    link.href = '#' // Replace with your actual resume path
+    link.href = 'https://drive.google.com/file/d/1TjGYuMWpU-kHLgsmGnK6hjJd7a302vc0/view?usp=sharing' // Replace with your actual resume path
     link.download = 'Resume.pdf'
     link.click()
   }
@@ -85,10 +85,10 @@ const Home = () => {
 
       <div className="max-w-7xl w-full mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-          
+
           {/* Left Content */}
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            
+
             {/* Status Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-xs sm:text-sm font-medium mb-6 hover:border-green-500/60 transition-colors">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
@@ -98,15 +98,15 @@ const Home = () => {
             {/* Main Heading */}
             <div className="mb-8">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
-                Hi, I'm{" "}
+                {/* Hi, I'm{" "} */}
                 <span className="relative inline-block">
                   <span className="absolute inset-0 bg-linear-to-r from-blue-400 to-purple-500 blur-lg opacity-75 animate-pulse"></span>
                   <span className="relative bg-linear-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                    Shrestha
+                    Hi, I'm Shrestha
                   </span>
                 </span>
               </h1>
-              
+
               {/* Animated role text */}
               <div className="h-12 md:h-16">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-blue-500 min-h-14">
@@ -118,65 +118,59 @@ const Home = () => {
 
             {/* Description */}
             <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-              I craft beautiful, high-performance web applications that solve real problems. 
-              Specializing in full-stack development with React, Node.js, and modern web technologies. 
+              I craft beautiful, high-performance web applications that solve real problems.
+              Specializing in full-stack development with React, Node.js, and modern web technologies.
               Let's build something amazing together.
             </p>
 
             {/* Action Buttons */}
             <div className="flex flex-wrap gap-4 mb-8">
-              <button className="group relative px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95">
+              {/* <button className="group relative px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95">
                 <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-cyan-600 group-hover:from-blue-500 group-hover:to-cyan-500 transition-all duration-300"></div>
                 <span className="relative flex items-center gap-2">
                   View My Work
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </span>
-              </button>
-              
-              <button 
-                onClick={downloadResume}
-                className="group relative px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold border-2 border-gray-600 text-gray-200 hover:text-white hover:border-blue-400 transition-all duration-300 hover:scale-105 active:scale-95"
+              </button> */}
+
+              <a
+                href="https://drive.google.com/file/d/1TjGYuMWpU-kHLgsmGnK6hjJd7a302vc0/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block group relative px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold border-2 border-gray-600 text-gray-200 hover:text-white hover:border-blue-400 transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 <span className="flex items-center gap-2">
                   Download Resume
                   <span className="group-hover:translate-y-0.5 transition-transform">⬇</span>
                 </span>
-              </button>
+              </a>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-6">
               <span className="text-gray-400 text-sm font-medium">Connect with me:</span>
               <div className="flex gap-4">
-                <a 
-                  href="https://github.com" 
-                  target="_blank" 
+                <a
+                  href="https://github.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700 text-gray-300 hover:text-cyan-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/20"
                   aria-label="GitHub"
                 >
                   <FaGithub size={20} />
                 </a>
-                <a 
-                  href="https://linkedin.com" 
-                  target="_blank" 
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700 text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20"
                   aria-label="LinkedIn"
                 >
                   <FaLinkedin size={20} />
                 </a>
-                <a 
-                  href="https://twitter.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700 text-gray-300 hover:text-cyan-300 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/20"
-                  aria-label="Twitter"
-                >
-                  <FaTwitter size={20} />
-                </a>
-                <a 
-                  href="mailto:your.email@example.com" 
+                
+                <a
+                  href="mailto:your.email@example.com"
                   className="p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700 text-gray-300 hover:text-orange-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/20"
                   aria-label="Email"
                 >
@@ -193,14 +187,14 @@ const Home = () => {
               {/* Outer glow circle */}
               <div className="absolute inset-0 bg-linear-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
               <div className="absolute inset-0 bg-linear-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl blur-xl opacity-20" style={{ animationDelay: '1s' }}></div>
-              
+
               {/* Image container */}
               <div className="relative p-1 bg-linear-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl overflow-hidden">
                 <div className="bg-linear-to-br from-slate-900 to-slate-950 rounded-3xl p-8">
                   <div className="relative overflow-hidden rounded-2xl bg-gray-800">
-                    <img 
-                      src={avatarImg} 
-                      alt="Profile" 
+                    <img
+                      src={avatarImg}
+                      alt="Profile"
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                     />
                     {/* Shine effect overlay */}
@@ -214,7 +208,7 @@ const Home = () => {
                 <p className="text-cyan-400 font-bold text-lg">500+</p>
                 <p className="text-gray-300 text-sm">Projects Built</p>
               </div> */}
-              
+
               {/* <div className="absolute -top-6 -right-6 bg-linear-to-br from-gray-800 to-gray-900 rounded-xl p-4 shadow-2xl border border-gray-700 backdrop-blur-sm hover:scale-105 transition-transform hidden sm:block">
                 <p className="text-purple-400 font-bold text-lg">5+</p>
                 <p className="text-gray-300 text-sm">Years Experience</p>

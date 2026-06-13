@@ -1,21 +1,22 @@
-import Navbar from "./Components/Navbar";
- import Home from "./Components/Home";
-import About from "./Components/About";
-import Projects from "./Components/Projects";
-import Footer from "./Components/Footer";
-import Skills from "./Components/Skills";
-
-
+import React from 'react';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="bg-[#171d32] h-auto w-full overflow-hidden">
-      <Navbar/>
-      <Home/>
-      <About/>
-      <Skills/>
-      <Projects/>
-      <Footer/>
+    <div className="bg-slate-950 min-h-screen selection:bg-cyan-500/30 selection:text-cyan-200 antialiased overflow-x-hidden">
+      <Navbar />
+      <main>
+        <Home />
+        <About />
+        <Skills />
+        <Projects />
+      </main>
+      <Footer />
     </div>
   );
 }

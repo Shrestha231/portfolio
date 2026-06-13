@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import ecommerceImg from "../assets/image.png"
-import internshipImg from "../assets/internship.jpg"
+import internshipImg from "../assets/Event.jpeg"
 import weatherImg from "../assets/weatherdashboard.jpeg"
 
 const projectsData = [
@@ -13,17 +13,17 @@ const projectsData = [
     category: "Full Stack",
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
     liveUrl: "https://shopzyy-4jyj.onrender.com/",
-    githubUrl: "https://github.com/yourusername/ecommerce",
+    // githubUrl: "https://github.com/yourusername/ecommerce",
   },
   {
     id: 2,
-    title: "Internship Recommendation System",
-    description: "An intelligent system that matches students with relevant internships based on skills and academic profile. Uses algorithms to provide personalized recommendations.",
+    title: "Event Aggregator and Management System",
+    description: "An intelligent system that matches students with relevant events based on interests and academic profile. Uses algorithms to provide personalized recommendations.",
     image: internshipImg,
-    category: "Machine Learning",
-    technologies: ["Python", "React", "Flask", "PostgreSQL"],
-    liveUrl: "https://internship-system.example.com/",
-    githubUrl: "https://github.com/yourusername/internship-system",
+    category: "Full Stack",
+    technologies: ["React", "TailwindCSS", "Nodejs", "MongoDB"],
+    liveUrl: "https://event-system.example.com/",
+    // githubUrl: "https://github.com/yourusername/event-system",
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const projectsData = [
     image: weatherImg,
     category: "Frontend",
     technologies: ["React", "OpenWeather API", "Tailwind CSS"],
-    liveUrl: "https://weather-dashboard.example.com/",
+    liveUrl: "https://weather-dashboard-0jqf.onrender.com",
     githubUrl: "https://github.com/yourusername/weather-dashboard",
   },
 ];
@@ -66,7 +66,7 @@ const Projects = () => {
             Featured Work
           </p>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Recent{" "}
+          
             <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Projects
             </span>

@@ -1,47 +1,4 @@
-// import React from "react";
-// import AboutImg from "../assets/Myphoto.png"; // apni image ka naam yaha daalo
 
-// const About = () => {
-//   return (
-//     <section id="About" className="w-full min-h-screen bg-linear-to-r from-black via-gray-900 to-black text-white flex items-center px-10">
-      
-//       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-        
-//         {/* Left Image */}
-//         <div className="shrink-0">
-//           <img
-//             src={AboutImg}
-//             alt="Profile"
-//             className="w-72 h-96 object-cover rounded-2xl shadow-lg border border-gray-700"
-//           />
-//         </div>
-
-//         {/* Right Content */}
-//         <div>
-//           <h1 className="text-5xl font-bold text-blue-400">
-//             Shrestha Kumari 
-//           </h1>
-
-//           <h2 className="text-xl mt-3 font-semibold text-gray-300">
-//             Full Stack Developer
-//           </h2>
-
-//           <p className="mt-6 text-gray-400 leading-8 max-w-2xl">
-//             I am a Full Stack Developer with a passion for building web
-//             applications that provide an exceptional user experience. I have a
-//             strong foundation in both front-end and back-end technologies,
-//             allowing me to create seamless and efficient applications. My goal
-//             is to leverage my skills to contribute to innovative projects and
-//             continuously learn in the ever-evolving tech landscape.
-//           </p>
-//         </div>
-
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default About;
 import React, { useState, useEffect } from "react"
 import AboutImg from "../assets/Myphoto.png"
 import { FaCode, FaServer, FaDatabase, FaPuzzlePiece } from "react-icons/fa"
@@ -75,7 +32,7 @@ const highlights = [
 
 const stats = [
   { number: "3+", label: "Projects Built", icon: "🚀" },
-  { number: "12+", label: "Technologies", icon: "⚙️" },
+  { number: "7+", label: "Technologies", icon: "⚙️" },
   { number: "50+", label: "Coding Problems", icon: "💡" },
   { number: "2x", label: "Ideathon Winner", icon: "🏆" },
 ]
@@ -91,7 +48,7 @@ const About = () => {
   }, [])
 
   return (
-    <section id="About" className="w-full py-20 bg-slate-950 text-white overflow-hidden">
+    <section id="About" className="w-full py-10 bg-slate-950 text-white overflow-hidden">
       {/* Background animation elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-20 right-1/4 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl animate-pulse"></div>
@@ -102,9 +59,9 @@ const About = () => {
         
         {/* Section Header */}
         <div className={`text-center mb-20 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <p className="text-sm text-cyan-400 font-semibold tracking-widest uppercase mb-4">
+          {/* <p className="text-sm text-cyan-400 font-semibold tracking-widest uppercase mb-4">
             Get to know me
-          </p>
+          </p> */}
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             About{" "}
             <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
@@ -153,7 +110,7 @@ const About = () => {
             </div>
 
             <p className="text-gray-400 text-lg leading-8 mb-6">
-              I'm a passionate <span className="text-white font-semibold">Full Stack Developer</span> with a strong foundation in modern web technologies. I specialize in building <span className="text-cyan-300">scalable, high-performance applications</span> that solve real-world problems.
+              I'm a passionate <span className="text-white font-semibold">Full Stack Developer skilled in React, Node.js, Express.js, MongoDB, and Java, with a passion for building scalable and impactful web applications. I specialize in creating responsive, high-performance solutions that combine clean architecture, seamless user experiences, and efficient backend systems.</span>
             </p>
 
             <p className="text-gray-400 text-lg leading-8 mb-8">
@@ -183,7 +140,7 @@ const About = () => {
         {/* Highlights Section */}
         <div className="mb-20">
           <h3 className={`text-2xl md:text-3xl font-bold text-white mb-12 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            What I Do
+            What I am doing
           </h3>
           
           <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -229,31 +186,63 @@ const About = () => {
         </div>
 
         {/* Statistics Section */}
-        <div className="bg-linear-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10 backdrop-blur-sm border border-gray-800 rounded-3xl p-8 md:p-12">
-          <h3 className={`text-2xl md:text-3xl font-bold text-white mb-12 text-center transform transition-all duration-700 ${animateStats ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            By The Numbers
-          </h3>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {stats.map((stat, index) => (
-              <div 
-                key={stat.label}
-                className={`text-center group cursor-pointer transform transition-all duration-500 hover:scale-110 ${animateStats ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div className="text-3xl md:text-4xl font-bold bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2 group-hover:from-cyan-400 group-hover:to-purple-500 transition-all">
-                  {stat.number}
-                </div>
-                <div className="text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors">
-                  {stat.label}
-                </div>
-                <div className="text-2xl mt-2 opacity-50 group-hover:opacity-100 transition-opacity">
-                  {stat.icon}
-                </div>
-              </div>
-            ))}
+       
+{/* Statistics Section */}
+<div className="relative mt-28">
+  {/* Left & Right Neomorphic Glow Orbs */}
+  <div className="absolute -left-10 top-1/2 -translate-y-1/2 w-72 h-32 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+  <div className="absolute -right-10 top-1/2 -translate-y-1/2 w-72 h-32 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+  {/* Section Divider Header */}
+  <div className={`flex items-center gap-4 mb-16 transform transition-all duration-700 ${animateStats ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+    <div className="h-[1px] flex-grow bg-gradient-to-r from-transparent to-slate-800"></div>
+    <span className="text-xs uppercase tracking-[0.3em] bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-black px-4">
+      Metrics & Milestones
+    </span>
+    <div className="h-[1px] flex-grow bg-gradient-to-l from-transparent to-slate-800"></div>
+  </div>
+  
+  {/* Grid Layout */}
+  <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 relative z-10">
+    {stats.map((stat, index) => (
+      <div 
+        key={stat.label}
+        className={`relative group flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 bg-slate-900/10 backdrop-blur-md border border-slate-900 hover:border-slate-800 hover:bg-slate-900/30 ${
+          animateStats ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}
+        style={{ transitionDelay: `${index * 150}ms` }}
+      >
+        {/* Sleek Top Accent Line on Hover */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:w-1/2 transition-all duration-500 rounded-full" />
+
+        {/* Futuristic Glowing Ring around Icon */}
+        <div className="relative flex items-center justify-center w-16 h-16 rounded-full bg-slate-950 border border-slate-800/80 mb-6 transition-all duration-500 group-hover:border-transparent group-hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]">
+          {/* Animated Gradient Ring hidden until hover */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 p-[1px]">
+            <div className="w-full h-full bg-slate-950 rounded-full"></div>
           </div>
+          <span className="text-2xl transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
+            {stat.icon}
+          </span>
         </div>
+
+        {/* Hyper-Bold Typography */}
+        <div className="text-4xl md:text-5xl font-black tracking-tighter text-white mb-2 transition-all duration-300 group-hover:tracking-normal group-hover:text-cyan-400">
+          {stat.number}
+        </div>
+
+        {/* Minimalist Label */}
+        <div className="text-xs uppercase font-semibold tracking-widest text-slate-500 group-hover:text-slate-300 transition-colors duration-300">
+          {stat.label}
+        </div>
+
+        {/* Subtle Decorative Crosshairs in corners (Tech/Cyber aesthetic) */}
+        <div className="absolute top-3 right-3 w-1 h-1 bg-slate-800 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        <div className="absolute bottom-3 left-3 w-1 h-1 bg-slate-800 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      </div>
+    ))}
+  </div>
+</div>
 
       </div>
     </section>
