@@ -69,7 +69,7 @@ const Home = () => {
   const downloadResume = () => {
     // Create a simple resume download - you can replace with your actual resume file
     const link = document.createElement('a')
-    link.href = 'https://drive.google.com/file/d/1TjGYuMWpU-kHLgsmGnK6hjJd7a302vc0/view?usp=sharing' // Replace with your actual resume path
+    link.href = 'https://drive.google.com/file/d/1SbKiifRtAe4B9C8rfIKqC7fLnDyFjD4_/view?usp=sharing' // Replace with your actual resume path
     link.download = 'Resume.pdf'
     link.click()
   }
@@ -97,13 +97,19 @@ const Home = () => {
 
             {/* Main Heading */}
             <div className="mb-8">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
-                {/* Hi, I'm{" "} */}
-                <span className="relative inline-block">
-                  <span className="absolute inset-0 bg-linear-to-r from-blue-400 to-purple-500 blur-lg opacity-75 animate-pulse"></span>
-                  <span className="relative bg-linear-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                    Hi, I'm Shrestha
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-4 tracking-tighter">
+                <span className="text-slate-100">Hi, I'm </span>
+                <span className="relative inline-flex items-baseline">
+                  {/* Subtle, elegant glow */}
+                  <span className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 blur-2xl opacity-30 animate-pulse"></span>
+                  
+                  {/* Vibrant Name Gradient */}
+                  <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 drop-shadow-lg">
+                    Shrestha
                   </span>
+                  
+                  {/* Decorative bouncing dot */}
+                  <span className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-purple-400 ml-2 animate-bounce inline-block"></span>
                 </span>
               </h1>
 
@@ -134,7 +140,7 @@ const Home = () => {
               </button> */}
 
               <a
-                href="https://drive.google.com/file/d/1TjGYuMWpU-kHLgsmGnK6hjJd7a302vc0/view?usp=sharing"
+                href="https://drive.google.com/file/d/1SbKiifRtAe4B9C8rfIKqC7fLnDyFjD4_/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block group relative px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold border-2 border-gray-600 text-gray-200 hover:text-white hover:border-blue-400 transition-all duration-300 hover:scale-105 active:scale-95"
@@ -151,7 +157,7 @@ const Home = () => {
               <span className="text-gray-400 text-sm font-medium">Connect with me:</span>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Shrestha231"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700 text-gray-300 hover:text-cyan-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/20"
@@ -160,7 +166,7 @@ const Home = () => {
                   <FaGithub size={20} />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/shrestha-kumari-b0bb47318"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700 text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20"
@@ -168,9 +174,9 @@ const Home = () => {
                 >
                   <FaLinkedin size={20} />
                 </a>
-                
+
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:shrestha2784@gmail.com"
                   className="p-3 rounded-lg bg-gray-800/50 hover:bg-gray-700 text-gray-300 hover:text-orange-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/20"
                   aria-label="Email"
                 >
@@ -183,19 +189,19 @@ const Home = () => {
           {/* Right - Profile Image */}
           <div className={`relative transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             {/* Animated glow background */}
-            <div className="relative w-full h-auto max-w-md mx-auto">
+            <div className="relative w-full h-auto max-w-[320px] mx-auto">
               {/* Outer glow circle */}
               <div className="absolute inset-0 bg-linear-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
               <div className="absolute inset-0 bg-linear-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl blur-xl opacity-20" style={{ animationDelay: '1s' }}></div>
 
               {/* Image container */}
               <div className="relative p-1 bg-linear-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-3xl overflow-hidden">
-                <div className="bg-linear-to-br from-slate-900 to-slate-950 rounded-3xl p-8">
+                <div className="bg-linear-to-br from-slate-900 to-slate-950 rounded-3xl p-5">
                   <div className="relative overflow-hidden rounded-2xl bg-gray-800">
                     <img
                       src={avatarImg}
                       alt="Profile"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                      className="w-full h-[260px] object-cover hover:scale-110 transition-transform duration-500"
                     />
                     {/* Shine effect overlay */}
                     <div className="absolute inset-0 bg-linear-to-tr from-transparent via-white to-transparent opacity-0 hover:opacity-10 transition-opacity duration-500"></div>
@@ -218,14 +224,7 @@ const Home = () => {
 
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="flex justify-center mt-20">
-          <div className="animate-bounce">
-            <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
-        </div>
+
       </div>
     </section>
   )

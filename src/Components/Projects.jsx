@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import ecommerceImg from "../assets/image.png"
 import internshipImg from "../assets/Event.jpeg"
-import weatherImg from "../assets/weatherdashboard.jpeg"
+import blogImg from "../assets/blog.webp"
+
 
 const projectsData = [
   {
@@ -17,6 +18,17 @@ const projectsData = [
   },
   {
     id: 2,
+    title: "Blog Management System",
+    description: "A role-based blog automation platform that enables Admins and Editors to create, manage, edit, and publish blogs through dedicated dashboards.",
+    image: blogImg,
+    category: "Full Stack",
+    technologies: ["React", "TailwindCSS", "Nodejs", "Express.js", "REST API", "MongoDB"],
+    liveUrl: "https://blog-management-c42c.onrender.com/",
+    // githubUrl: "https://github.com/yourusername/event-system",
+  },
+
+  {
+    id: 3,
     title: "Event Aggregator and Management System",
     description: "An intelligent system that matches students with relevant events based on interests and academic profile. Uses algorithms to provide personalized recommendations.",
     image: internshipImg,
@@ -25,16 +37,7 @@ const projectsData = [
     liveUrl: "https://event-system.example.com/",
     // githubUrl: "https://github.com/yourusername/event-system",
   },
-  {
-    id: 3,
-    title: "Weather Dashboard",
-    description: "A real-time weather application providing current weather information, forecasts, and weather alerts. Features interactive maps and detailed meteorological data.",
-    image: weatherImg,
-    category: "Frontend",
-    technologies: ["React", "OpenWeather API", "Tailwind CSS"],
-    liveUrl: "https://weather-dashboard-0jqf.onrender.com",
-    githubUrl: "https://github.com/yourusername/weather-dashboard",
-  },
+
 ];
 
 const Projects = () => {
@@ -46,8 +49,8 @@ const Projects = () => {
   }, []);
 
   const categories = ["All", ...new Set(projectsData.map(p => p.category))];
-  const filteredProjects = selectedCategory === "All" 
-    ? projectsData 
+  const filteredProjects = selectedCategory === "All"
+    ? projectsData
     : projectsData.filter(p => p.category === selectedCategory);
 
   return (
@@ -59,14 +62,14 @@ const Projects = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        
+
         {/* Heading */}
         <div className={`text-center mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <p className="text-sm text-cyan-400 font-semibold tracking-widest uppercase mb-4">
             Featured Work
           </p>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-          
+
             <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Projects
             </span>
@@ -82,11 +85,10 @@ const Projects = () => {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-                selectedCategory === cat
-                  ? 'bg-linear-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30'
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700 hover:border-blue-500/50'
-              }`}
+              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${selectedCategory === cat
+                ? 'bg-linear-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30'
+                : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700 hover:border-blue-500/50'
+                }`}
             >
               {cat}
             </button>
@@ -96,7 +98,7 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           {filteredProjects.map((project, index) => (
-            <div 
+            <div
               key={project.id}
               style={{ transitionDelay: `${index * 100}ms` }}
             >

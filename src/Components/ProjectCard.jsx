@@ -5,7 +5,7 @@ const ProjectCard = ({ title, description, image, category, technologies, liveUr
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
+    <div
       className="group relative h-full overflow-hidden rounded-2xl transition-all duration-500"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -20,15 +20,15 @@ const ProjectCard = ({ title, description, image, category, technologies, liveUr
       <div className="absolute -inset-0.5 bg-linear-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-300 -z-10"></div>
 
       <div className="relative flex flex-col h-full p-6 md:p-8">
-        
+
         {/* Image container */}
         <div className="relative overflow-hidden rounded-xl mb-6 bg-gray-800">
-          <img 
-            src={image} 
+          <img
+            src={image}
             alt={title}
             className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
           />
-          
+
           {/* Overlay on hover */}
           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
             {liveUrl && (
@@ -76,7 +76,7 @@ const ProjectCard = ({ title, description, image, category, technologies, liveUr
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-6">
           {technologies.map((tech) => (
-            <span 
+            <span
               key={tech}
               className="px-3 py-1 text-xs font-medium text-gray-300 bg-gray-800/50 rounded-lg border border-gray-700/50 group-hover:border-gray-600 transition-colors duration-300"
             >
@@ -101,7 +101,7 @@ const ProjectCard = ({ title, description, image, category, technologies, liveUr
               </span>
             </a>
           )}
-          
+
           {githubUrl && (
             <a
               href={githubUrl}

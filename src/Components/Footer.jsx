@@ -59,7 +59,7 @@ export const ContactSection = () => (
 
     {/* Open air elegant grid system layout */}
     <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-stretch">
-      
+
       {/* Left Column — Text Intro */}
       <div className="md:col-span-5 flex flex-col justify-between py-1">
         <div>

@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full fixed top-0 left-0 z-50 bg-[#0c0e19] text-white px-6 md:px-20 py-4 flex justify-between items-center">
-      
+
       <span className="text-xl md:text-2xl font-bold tracking-wide">
         Portfolio
       </span>
@@ -39,7 +39,7 @@ const Navbar = () => {
       {/* Mobile Menu - Changed #Footer to #contact to correctly point to your contact container */}
       {menu && (
         <ul className="absolute top-14 left-0 w-full bg-[#111325] text-center py-6 flex flex-col gap-6 font-semibold md:hidden">
-          <li><a href="#About" onClick={() => setMenu(false)}>About</a></li> 
+          <li><a href="#About" onClick={() => setMenu(false)}>About</a></li>
           <li><a href="#skills" onClick={() => setMenu(false)}>Skills</a></li>
           <li><a href="#Projects" onClick={() => setMenu(false)}>Projects</a></li>
           <li><a href="#contact" onClick={() => setMenu(false)}>Contact</a></li>
