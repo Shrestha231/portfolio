@@ -85,19 +85,15 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative py-20 md:py-28 overflow-hidden bg-[#050508]"
+      className="relative py-20 md:py-20 overflow-hidden bg-[#050508]"
       data-testid="skills-section"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header Block */}
-        <div className="mb-14 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div>
-
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-white">
-              Core <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-cyan-400">Skills</span>
-            </h2>
-          </div>
-
+        <div className="mb-14 md:mb-16 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold font-poppins tracking-tight text-white mb-6">
+            Core <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">Skills</span>
+          </h2>
         </div>
 
         {/* Static Professional Grid Layout */}

@@ -101,11 +101,8 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-1">
 
         {/* Section Header */}
-        <div className={`text-center mb-20 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          {/* <p className="text-sm text-cyan-400 font-semibold tracking-widest uppercase mb-4">
-            Get to know me
-          </p> */}
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+        <div className={`text-center mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <h2 className="text-4xl md:text-5xl font-bold font-poppins tracking-tight mb-6 text-white">
             About{" "}
             <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Me
@@ -136,7 +133,7 @@ const About = () => {
               {/* Achievement Badge */}
               <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 bg-linear-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full shadow-xl font-semibold flex items-center justify-center gap-2 border border-purple-400/30 whitespace-nowrap z-10">
                 <span className="text-xl">🎓</span>
-                <span>MCA · 83% Score</span>
+                <span>MCA  (8.5 CGPA)</span>
               </div>
             </div>
           </div>
@@ -183,7 +180,7 @@ const About = () => {
         {/* Highlights Section */}
         <div className="mb-20">
           <h3 className={`text-2xl md:text-3xl font-bold text-white mb-12 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            What I am doing
+            What I perform.
           </h3>
 
           <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>

@@ -42,16 +42,10 @@ const projectsData = [
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  const categories = ["All", ...new Set(projectsData.map(p => p.category))];
-  const filteredProjects = selectedCategory === "All"
-    ? projectsData
-    : projectsData.filter(p => p.category === selectedCategory);
 
   return (
     <section id="Projects" className="w-full py-24 bg-slate-950 text-white overflow-hidden">
@@ -65,11 +59,8 @@ const Projects = () => {
 
         {/* Heading */}
         <div className={`text-center mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <p className="text-sm text-cyan-400 font-semibold tracking-widest uppercase mb-4">
-            Featured Work
-          </p>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
 
+          <h2 className="text-4xl md:text-5xl font-bold font-poppins tracking-tight mb-6 text-white">
             <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Projects
             </span>
@@ -79,25 +70,9 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className={`flex flex-wrap justify-center gap-3 mb-16 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${selectedCategory === cat
-                ? 'bg-linear-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30'
-                : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700 hover:border-blue-500/50'
-                }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
         {/* Projects Grid */}
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          {filteredProjects.map((project, index) => (
+          {projectsData.map((project, index) => (
             <div
               key={project.id}
               style={{ transitionDelay: `${index * 100}ms` }}
@@ -108,7 +83,7 @@ const Projects = () => {
         </div>
 
         {/* Empty state */}
-        {filteredProjects.length === 0 && (
+        {projectsData.length === 0 && (
           <div className="text-center py-20">
             <p className="text-gray-400 text-lg">No projects in this category.</p>
           </div>
